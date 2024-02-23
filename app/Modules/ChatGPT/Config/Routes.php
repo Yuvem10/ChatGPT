@@ -54,30 +54,22 @@ $routes->get('/', INTEGRATION_BASE_MODULE.'\Controllers\C_ChatGPT::displayChatGP
 // CHAT GPT
 //--------------------------------------------------------------------
 
-$routes->group(
-	'ChatGPT',
-	/**
-	 * @param $routes RouteCollection
-	 */
-	function ($routes) {
-		$controllerPath 	= INTEGRATION_BASE_MODULE.'\Controllers\C_ChatGPT';
+$controllerPath = INTEGRATION_BASE_MODULE.'\Controllers\C_ChatGPT';
 
-		/** @uses \ChatGPT\Controllers\C_ChatGPT::loadChatCompletionSession() */
-		$routes->get('sessions/(:any)', $controllerPath . '::loadChatCompletionSession/$1');
+/** @uses \ChatGPT\Controllers\C_ChatGPT::loadChatCompletionSession() */
+$routes->get('sessions/(:any)', $controllerPath . '::loadChatCompletionSession/$1');
 
-		/**  @uses \ChatGPT\Controllers\C_ChatGPT::getChatCompletionSessions() */
-		$routes->get('sessions', $controllerPath . '::getChatCompletionSessions');
+/**  @uses \ChatGPT\Controllers\C_ChatGPT::getChatCompletionSessions() */
+$routes->get('sessions', $controllerPath . '::getChatCompletionSessions');
 
-		/** @uses \ChatGPT\Controllers\C_ChatGPT::createChatCompletionSession() */
-		$routes->post('sessions', $controllerPath . '::createChatCompletionSession');
+/** @uses \ChatGPT\Controllers\C_ChatGPT::createChatCompletionSession() */
+$routes->post('sessions', $controllerPath . '::createChatCompletionSession');
 
-		/** @uses \ChatGPT\Controllers\C_ChatGPT::deleteChatCompletionSession() */
-		$routes->delete('sessions/(:any)', $controllerPath . '::deleteChatCompletionSession/$1');
+/** @uses \ChatGPT\Controllers\C_ChatGPT::deleteChatCompletionSession() */
+$routes->delete('sessions/(:any)', $controllerPath . '::deleteChatCompletionSession/$1');
 
-		/** @uses \ChatGPT\Controllers\C_ChatGPT::displayChatGPT() */
-		$routes->get('display', $controllerPath . '::displayChatGPT');
+/** @uses \ChatGPT\Controllers\C_ChatGPT::displayChatGPT() */
+$routes->get('display', $controllerPath . '::displayChatGPT');
 
-		/** @uses \ChatGPT\Controllers\C_ChatGPT::createChatCompletion() */
-		$routes->post('createCompletion', $controllerPath . '::createChatCompletion');
-	}
-);
+/** @uses \ChatGPT\Controllers\C_ChatGPT::createChatCompletion() */
+$routes->post('createCompletion', $controllerPath . '::createChatCompletion');

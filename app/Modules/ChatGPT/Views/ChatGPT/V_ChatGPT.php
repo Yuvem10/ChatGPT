@@ -292,7 +292,7 @@
 
 <main class="content">
 
-	<div class="container">
+<div class="container">
 
 		<div class="card">
 
@@ -390,7 +390,7 @@
 
 		// ajax request to retrieve the empty file, route = /ChatGPT/sessions
 		$.ajax({
-			url: '<?= base_url('ChatGPT/sessions') ?>',
+			url: '<?= base_url('sessions') ?>',
 			type: 'POST',
 			dataType: 'json',
 			success: function (response) {
@@ -477,7 +477,7 @@
 
 		// Send the Ajax request to the server (POST : /ChatGPT/createCompletion)
 		$.ajax({
-			url: '<?= base_url('ChatGPT/createCompletion') ?>',
+			url: '<?= base_url('createCompletion') ?>',
 			type: 'POST',
 			dataType: 'json',
 			data: {
@@ -580,7 +580,7 @@
 		disableLoadingAnimation = true;
 
 		$.ajax({
-			url: '<?= base_url('ChatGPT/sessions') ?>',
+			url: '<?= base_url('sessions') ?>',
 			type: 'GET',
 			dataType: 'json',
 			success: function (response) {
@@ -690,7 +690,7 @@
 
 		// without reloading the page retrieve the session
 		$.ajax({
-			url: '<?= base_url('ChatGPT/sessions') ?>/'+sessionID,
+			url: '<?= base_url('sessions') ?>/'+sessionID,
 			type: 'GET',
 			dataType: 'json',
 			success: function (response) {
@@ -743,7 +743,7 @@
 			if (confirm("Voulez-vous vraiment supprimer cette conversation ?")) {
 
 				$.ajax({
-					url: '<?= base_url('ChatGPT/sessions') ?>/'+sessionID,
+					url: '<?= base_url('sessions') ?>/'+sessionID,
 					type: 'DELETE',
 					dataType: 'json',
 					success: function (response) {
@@ -783,7 +783,7 @@
 		}
 		else {
 			$.ajax({
-				url: '<?= base_url('ChatGPT/sessions') ?>/'+sessionID,
+				url: '<?= base_url('sessions') ?>/'+sessionID,
 				type: 'DELETE',
 				dataType: 'json',
 				success: function (response) {
