@@ -1,0 +1,1 @@
+<?PHP require_once('./src/autoload.php'); ?>
