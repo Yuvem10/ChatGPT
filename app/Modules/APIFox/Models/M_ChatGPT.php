@@ -536,10 +536,6 @@ class M_ChatGPT extends RF_Model
 
 
 			// Body for deletion
-<<<<<<< HEAD
-=======
-
->>>>>>> 5fc7883ff9c72581e885980214fb7a911bcdaf5c
 			$response = $this->curlClient->delete($this->baseURL . '/v'.$this->version.'/files/'.$fileId, $this->requestOptions);
 			$this->ret['status'] = $response->getStatusCode();
 			$body = json_decode($response->getBody(), true);
